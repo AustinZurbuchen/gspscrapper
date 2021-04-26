@@ -59,6 +59,16 @@ for img in soup.find_all("img", class_="gsp_posts_row_flair_img"):
     characters.append(fix_flairs(character, num))
     imageUrls.append(url)
 
-# print out data collected
+# create objects with data
+data = []
 for gsp, character, url in zip(gsps, characters, imageUrls):
-    print(character, gsp, url)
+    item = {
+        'gsp': gsp,
+        'character': character,
+        'url': url
+    }
+    data.append(item)
+
+# print out data collected
+for item in data:
+    print(item)
